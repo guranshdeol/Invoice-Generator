@@ -54,7 +54,7 @@ const InvoicePDF = ({ invoiceInfoHeaderData, invoiceItemsTableData }) => {
       margin: { left: 10, right: 10 },
     });
 
-    doc.save(`${invoiceInfoHeaderData.invoiceNumber}_${timeStamp}.pdf`);
+    doc.save(`${invoiceInfoHeaderData.invoiceNumber}.pdf`);
   };
 
   return (

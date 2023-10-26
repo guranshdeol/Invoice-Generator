@@ -1,6 +1,4 @@
-// Add ag-grid table to store invoice items/details
-
-import { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -23,6 +21,7 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
   const gridRef = useRef();
 
   const [rowData, setRowData] = useState([{}]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   // column headers and their definitions
   const columnDefs = [
@@ -82,6 +81,15 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
     sortable: true,
   };
 
+  // Calculate the total price whenever rowData changes
+  useEffect(() => {
+    const calculatedTotal = rowData.reduce((total, row) => {
+      const rowTotal = row.quantity * row.price || 0;
+      return total + rowTotal;
+    }, 0);
+    setTotalPrice(calculatedTotal);
+  }, [rowData]);
+
   // add empty row to the grid
   const addEmptyRow = () => {
     const newRow = {};
@@ -118,12 +126,16 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
           defaultColDef={defaultColDef}
           animateRows={true}
           onCellValueChanged={(params) => {
-            console.log("Cell value changed: ", params.data)
-            onRowDataChange(rowData)
+            onRowDataChange(rowData);
           }}
         />
       </div>
       {/* AgGrid Table End */}
+      
+      {/* Display the total price */}
+      <div className="mt-4">
+        <strong>Total Price:</strong> {totalPrice.toFixed(2)} {/* You can format this as needed */}
+      </div>
     </div>
   );
 };

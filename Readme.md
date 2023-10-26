@@ -23,7 +23,7 @@ Here're some of the project's best features:
 <p>1. To get started with this project clone the repository</p>
 
 ```bash
-https://github.com/guranshdeol/Invoice-Generator.git
+git clone https://github.com/guranshdeol/Invoice-Generator.git
 cd Invoice-Generator
 ```
 

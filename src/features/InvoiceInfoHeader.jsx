@@ -1,6 +1,13 @@
-// Add Invoice Information like User, Customer, Date, Invoice Number, etc. here
+import React from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'; // Import the CSS for styling
 
 const InvoiceInfoHeader = ({ invoiceInfoData, onInvoiceInfoChange }) => {
+  const handleDateChange = (date) => {
+    onInvoiceInfoChange("invoiceDate", date); // Update the state with the selected date
+  };
+
+  // Ensure invoiceInfoHeadersArray is always an array
   const invoiceInfoHeadersArray = [
     {
       label: "Company Name",
@@ -37,24 +44,32 @@ const InvoiceInfoHeader = ({ invoiceInfoData, onInvoiceInfoChange }) => {
   return (
     <div>
       <h1>Invoice Info Header</h1>
-
-      {/* Map over invoiceInfoHeadersArray Start*/}
       <div className="flex flex-wrap">
         {invoiceInfoHeadersArray.map((item) => (
           <div key={item.label} className="w-full sm:w-1/2 md:w-1/4 p-2">
             <label className="block text-sm text-neutral-content pb-1">
               {item.label}
             </label>
-            <input
-              className="input input-bordered w-full"
-              type="text"
-              value={item.value}
-              onChange={(e) => item.onChange(e.target.value)}
-            />
+            <div className="relative"> {/* Use a wrapper div for consistent styling */}
+              {item.label === "Invoice Date" ? (
+                <DatePicker
+                  selected={item.value}
+                  onChange={handleDateChange}
+                  dateFormat="dd-MM-yyyy"
+                  className="input input-bordered w-full" // Apply the same CSS class
+                />
+              ) : (
+                <input
+                  className="input input-bordered w-full"
+                  type="text"
+                  value={item.value}
+                  onChange={(e) => item.onChange(e.target.value)}
+                />
+              )}
+            </div>
           </div>
         ))}
       </div>
-      {/* Map over invoiceInfoHeadersArray End*/}
     </div>
   );
 };

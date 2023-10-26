@@ -5,6 +5,13 @@ const InvoicePDF = ({ invoiceInfoHeaderData, invoiceItemsTableData }) => {
   const timeStamp = new Date().toISOString();
 
   const generatePDF = () => {
+    if (
+      !invoiceInfoHeaderData.companyName ||
+      !invoiceInfoHeaderData.invoiceNumber
+    ) {
+      alert("Company Name and Invoice Number are required to generate the PDF.");
+      return;
+    }
     const doc = new jsPDF();
 
     // Set font size

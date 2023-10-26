@@ -3,6 +3,14 @@ import * as XLSX from "xlsx"; // Import the entire XLSX module using "* as XLSX"
 
 const InvoiceExcel = ({ invoiceInfoHeaderData, invoiceItemsTableData }) => {
   const generateExcel = () => {
+
+    if (
+        !invoiceInfoHeaderData.companyName ||
+        !invoiceInfoHeaderData.invoiceNumber
+      ) {
+        alert("Company Name and Invoice Number are required to generate the EXCEL.");
+        return;
+      }
     const workbook = XLSX.utils.book_new();
 
     // Create a worksheet for invoice data

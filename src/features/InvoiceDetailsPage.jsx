@@ -3,6 +3,7 @@ import { useState } from "react";
 import InvoiceInfoHeader from "./InvoiceInfoHeader";
 import InvoiceItemsTable from "./InvoiceItemsTable";
 import InvoicePDF from "./InvoicePDF";
+import InvoiceExcel from "./InvoiceEXCEL";
 import TempInvoiceDetailsOutput from "./Temp/TempInvoiceDetailsOutput";
 
 const InvoiceDetailsPage = () => {
@@ -49,11 +50,16 @@ const InvoiceDetailsPage = () => {
       {/* InvoiceItemsTable End  */}
 
       {/* InvoicePDF Start */}
-      <InvoicePDF
-        invoiceInfoHeaderData={invoiceInfoHeader}
-        invoiceItemsTableData={rowItemData}
-      />
-      {/* InvoicePDF End */}
+      <div className="flex space-x-4">
+        <InvoicePDF
+          invoiceInfoHeaderData={invoiceInfoHeader}
+          invoiceItemsTableData={rowItemData}
+        />
+        <InvoiceExcel
+          invoiceInfoHeaderData={invoiceInfoHeader}
+          invoiceItemsTableData={rowItemData}
+        />
+      </div>
 
       {/* TempInvoiceDetailsOutput Start */}
       <div className="card w-auto my-8 bg-neutral">

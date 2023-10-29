@@ -17,8 +17,7 @@ Here're some of the project's best features:
 - Export invoice as a PDF
 - Data validation for PDF generation
 - Excel export
-- Date picker
-- Total price calculation
+
 
 <h2>🛠️ Installation Steps:</h2>
 

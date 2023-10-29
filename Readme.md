@@ -43,7 +43,7 @@ npm start
 
 Contributions are always welcome! If you'd like to contribute to this project please fork the repository and create a pull request.
 
-  
+Check out <a href="https://github.com/srummanf/Invoice-Generator/blob/master/CONTRIBUTING.md">CONTRIBUTION</a> guidelines for more details.
   
 <h2>💻 Built with</h2>
 

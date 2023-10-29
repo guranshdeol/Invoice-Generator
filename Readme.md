@@ -18,7 +18,6 @@ Here're some of the project's best features:
 - Data validation for PDF generation
 - Excel export
 
-
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. To get started with this project clone the repository</p>
@@ -43,6 +42,8 @@ npm start
 <h2>🍰 Contribution Guidelines:</h2>
 
 Contributions are always welcome! If you'd like to contribute to this project please fork the repository and create a pull request.
+
+Check out <a href="https://github.com/guranshdeol/Invoice-Generator/blob/master/CONTRIBUTING.md">CONTRIBUTION</a> guidelines for more details.
 
 <h2>💻 Built with</h2>
 

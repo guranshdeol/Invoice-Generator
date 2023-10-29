@@ -8,15 +8,17 @@
 
 [https://invoice-generator-guransh.netlify.app/](https://invoice-generator-guransh.netlify.app/)
 
-  
-  
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
 
-*   Add and delete invoice items
-*   Edit invoice item details
-*   Export invoice as a PDF
+- Add and delete invoice items
+- Edit invoice item details
+- Export invoice as a PDF
+- Data validation for PDF generation
+- Excel export
+- Date picker
+- Total price calculation
 
 <h2>🛠️ Installation Steps:</h2>
 
@@ -29,7 +31,7 @@ cd Invoice-Generator
 
 <p>2. Run `npm install` to install the necessary dependencies.</p>
 
-``` 
+```
 npm install
 ```
 
@@ -43,22 +45,20 @@ npm start
 
 Contributions are always welcome! If you'd like to contribute to this project please fork the repository and create a pull request.
 
-  
-  
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
 
-*   Frontend Framework/library: **React.js** + **Vite**
-*   CSS Styling using: **TailwindCSS** and **DaisyUI**
-*   Page Routing using: **react-router-dom**
-*   Invoice Deatils Table using: **ag-grid-react**
-*   PDF Generation using: **react-pdf**
-*   Formatting using: **Prettier**
-*   Testing using: **React-Testing-Library** and **Vitest**
-*   State Management using: **Redux-Toolkit(RTK)**
-*   Data Storageon client-side in **IndexedDB** using **Dexie.js**
-*   Deployment on **Netlify**
+- Frontend Framework/library: **React.js** + **Vite**
+- CSS Styling using: **TailwindCSS** and **DaisyUI**
+- Page Routing using: **react-router-dom**
+- Invoice Deatils Table using: **ag-grid-react**
+- PDF Generation using: **react-pdf**
+- Formatting using: **Prettier**
+- Testing using: **React-Testing-Library** and **Vitest**
+- State Management using: **Redux-Toolkit(RTK)**
+- Data Storageon client-side in **IndexedDB** using **Dexie.js**
+- Deployment on **Netlify**
 
 <h2>🛡️ License:</h2>
 

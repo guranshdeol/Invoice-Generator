@@ -58,7 +58,7 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
     {
       headerName: "Total",
       field: "total",
-      valueGetter: "data.quantity * data.price",
+      valueGetter: "data.quantity * data.price || 0",
       width: 150,
     },
     {
@@ -104,9 +104,9 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
   };
 
   return (
-    <div>
+    <>
       {/* Invoice title and Add Row Button -- Start */}
-      <div className="mb-6 flex justify-between items-center">
+      <div className="mb-6 w-full flex justify-between items-center">
         <h1 className="text-2xl">Invoice Items Table</h1>
         <button onClick={addEmptyRow} className="btn btn-primary">
           ADD ROW
@@ -117,7 +117,7 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
       {/* AgGrid Table Start */}
       <div
         className="ag-theme-alpine-dark"
-        style={{ height: 500, width: "90vw" }}
+        style={{ height: 500, width: "100%" }}
       >
         <AgGridReact
           ref={gridRef}
@@ -136,7 +136,7 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
       <div className="mt-4">
         <strong>Total Price:</strong> {totalPrice.toFixed(2)} {/* You can format this as needed */}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -43,7 +43,7 @@ const InvoiceDetailsPage = () => {
 
       {/* InvoiceItemsTable Start  */}
       <div className="card w-full bg-base-300 shadow-xl my-4">
-        <div className="flex justify-center items-center m-6">
+      <div className="flex justify-center flex-col items-start m-6">
           <InvoiceItemsTable onRowDataChange={handleRowDataChange} />
         </div>
       </div>

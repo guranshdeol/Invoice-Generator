@@ -117,7 +117,7 @@ const InvoiceItemsTable = ({ onRowDataChange }) => {
       {/* AgGrid Table Start */}
       <div
         className="ag-theme-alpine-dark"
-        style={{ height: 500, width: "90vw" }}
+        style={{ height: 500, width: "60vw", overflowX: "auto" }}
       >
         <AgGridReact
           ref={gridRef}
